@@ -39,9 +39,16 @@ pipeline {
             steps {
                 echo "Stopping IIS site"
                 bat "powershell -Command \"Stop-WebSite -Name '%IIS_SITE%'\""
+                bat 'powershell -Command "Stop-WebAppPool -Name \'%IIS_APPPOOL%\'"'
+
+                echo "Waiting for file handles to release"
+                bat 'powershell -Command "Start-Sleep -Seconds 5"'
 
                 echo "Copying files"
                 bat "xcopy %PUBLISH_DIR%\\* %IIS_PATH%\\ /E /Y /I"
+
+                echo "Starting app pool"
+                bat 'powershell -Command "Start-WebAppPool -Name \'%IIS_APPPOOL%\'"'
 
                 echo "Starting IIS site"
                 bat "powershell -Command \"Start-WebSite -Name '%IIS_SITE%'\""
