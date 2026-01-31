@@ -1,0 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using OrderSevice.Models;
+
+namespace OrderSevice.Data
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        public DbSet<Order> Orders { get; set; }
+    }
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\AppPublish\OrderService</_PublishTargetUrl>
+    <History>False|2026-01-30T05:29:37.9096805Z||;False|2026-01-30T11:28:53.7728921+06:00||;False|2026-01-30T11:25:45.0396789+06:00||;False|2026-01-30T11:25:17.2100110+06:00||;False|2026-01-30T11:24:30.5863695+06:00||;True|2026-01-30T10:55:51.6324133+06:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
