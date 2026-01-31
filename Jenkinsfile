@@ -50,14 +50,7 @@ pipeline {
 
         stage('Health Check') {
             steps {
-                bat """
-                powershell -Command "
-                try {
-                    $r = Invoke-WebRequest http://localhost:8081/ping -UseBasicParsing;
-                    if ($r.StatusCode -ne 200) { exit 1 }
-                } catch { exit 1 }
-                "
-                """
+                bat 'powershell -Command "try { $r = Invoke-WebRequest %HEALTH_URL% -UseBasicParsing -TimeoutSec 10; if ($r.StatusCode -ne 200) { exit 1 } } catch { exit 1 }"'
             }
         }
     }
