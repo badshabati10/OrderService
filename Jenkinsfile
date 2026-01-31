@@ -5,7 +5,9 @@ pipeline {
         DOTNET = "C:\\Program Files\\dotnet\\dotnet.exe"
         PUBLISH_DIR = "D:\\Programming\\Practice\\Publish\\OrderService" 
         IIS_SITE = "OrderService"
+        IIS_APPPOOL = "OrderService"
         IIS_PATH = "D:\\AppPublish\\OrderService"
+        HEALTH_URL  = "http://localhost:8081/ping"
     }
 
     stages {
